@@ -4,11 +4,11 @@ public static class StringUtils
 {
     public static string ReverseString(string text)
     {
-        // if (text == null) return null;
-        // char[] charArray = text.ToCharArray();
-        // Array.Reverse(charArray);
-        // return new string(charArray);
-        return text;
+        if (text == null) return null;
+        char[] charArray = text.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
+        // return text;
     }
 
     public static int CountVowels(string text)
