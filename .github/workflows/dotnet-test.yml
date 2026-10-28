@@ -19,7 +19,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -29,16 +29,18 @@ jobs:
 
       - name: Run xUnit tests
         run: dotnet test --no-build --configuration Release --verbosity normal
+
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
-      - name: Set up Python 3.13
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-           dotnet-version: '8.0.x'
-      - name: Install Ruff
-        run: pip install ruff
-      - name: Run linter
-        run: ruff check .
+          dotnet-version: '10.0.x'
+
+      - name: Check code style
+        run: dotnet format DotNetCiPipeline.slnx --verify-no-changes --severity warn
