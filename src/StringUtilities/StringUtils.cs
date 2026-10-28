@@ -1,4 +1,6 @@
-﻿namespace StringUtilities;
+﻿using System;
+
+namespace StringUtilities;
 
 public static class StringUtils
 {
