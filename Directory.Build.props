@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- Required for IDE0005 (unnecessary using) to be reported outside the IDE -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+</Project>
